@@ -20,7 +20,7 @@ class Main(QDialog):
                             'программы на Python')
 
         # Задание иконки окна
-        self.setWindowIcon(QtGui.QIcon('Cat.png'))
+        self.setWindowIcon(QtGui.QIcon('logo.png'))
 
         # Задание картинки с заданием с масштабированием в компоненте
         self.label_img.setPixmap(QPixmap('main.png'))
