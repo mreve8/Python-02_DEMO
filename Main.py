@@ -20,8 +20,7 @@ class Main(QDialog):
                             'программы на Python')
 
         # Задание иконки окна
-        self.setWindowIcon(QtGui.QIcon('logo.png'))
-
+        self.setWindowIcon(QtGui.QIcon('Cat.png'))
         # Задание картинки с заданием с масштабированием в компоненте
         self.label_img.setPixmap(QPixmap('main.png'))
         self.label_img.setScaledContents(True)
@@ -37,10 +36,11 @@ class Main(QDialog):
             a = float(self.lineEdit_a.text())
             b = float(self.lineEdit_b.text())
             x = float(self.lineEdit_x.text())
-            if x > 6:
-                answer = (a / x) + b / (x ** 2)
+            d = float(self.lineEdit_d.text())
+            if x < 6:
+                answer = ((a + b) ** 2) / x - 2
             else:
-                answer = (a ** 2) * (x + b)
+                answer = (x * (d ** 3)) + (b ** 2)
             self.label_answer.setText('Ответ: ' + str(format(answer, '.2f')))
         except:
             self.label_answer.setText(
@@ -51,6 +51,7 @@ class Main(QDialog):
         self.lineEdit_a.setText('')
         self.lineEdit_b.setText('')
         self.lineEdit_x.setText('')
+        self.lineEdit_d.setText('')
         self.label_answer.setText('Ответ: ')
 
 
